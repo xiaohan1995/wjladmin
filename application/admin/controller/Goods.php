@@ -11,7 +11,7 @@ class Goods  extends AdminBase
     {
     	
         
-        $goods =  Db::table('goods')->select();
+        $goods =  Db::table('yx_goods')->select();
 
 
         $this->assign("goods",$goods);
