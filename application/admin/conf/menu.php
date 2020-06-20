@@ -99,6 +99,17 @@ $menu = array(
 	                	array("name"=>'修改','action'=>"admin/Role/updateRoleAuth"),
 	                )
 			    ),
+			    array(
+					'name'=>'商品管理',
+
+					'action'=>'admin/Goods/goodsList',
+
+	                "auth"=>array(
+	                    array("name"=>'添加','action'=>"admin/Role/addRoleAuth"),
+	                	array("name"=>'删除','action'=>"admin/Role/delRole"),
+	                	array("name"=>'修改','action'=>"admin/Role/updateRoleAuth"),
+	                )
+			    ),
 			    
 		    )
 		    
@@ -107,6 +118,28 @@ $menu = array(
 
 		array(
 			'name'=>'文章管理',
+	        'controller'=>'admin/Order',
+	        'icon'=>'fa-edit',
+			'child'=>array(
+
+				array(
+					'name'=>'文章列表',
+
+					'action'=>'admin/Article/articleList',
+
+	                "auth"=>array(
+	                	array("name"=>'添加','action'=>"admin/Article/addArticle"),
+	                	array("name"=>'删除','action'=>"admin/Article/delArticle"),
+	                	array("name"=>'修改','action'=>"admin/Article/updateArticle"),
+	                )
+			    ),
+	            
+		    )
+		    
+		),
+
+		array(
+			'name'=>'用户管理',
 	        'controller'=>'admin/Order',
 	        'icon'=>'fa-edit',
 			'child'=>array(
