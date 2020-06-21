@@ -22,9 +22,9 @@ class Upload  extends AdminBase
            
             if($isupload==1){
                 return json(['code'=>1,'msg'=>'图片符合规定','data'=>'']);
-            }elseif($isupload==2){
+            }elseif($isupload==2){upload
                 
-                $uploadInfo = $file->move(ROOT_PATH . 'public' . DS . 'upload'. DS . $this->saveFolder);
+                $uploadInfo = $file->move(ROOT_PATH . 'public' . DS . ''. DS . $this->saveFolder);
                 if($uploadInfo) {
                     return json(['code'=>1,'msg'=>'图片符合规定','data'=> DS .'upload'. DS . $this->saveFolder. DS .$uploadInfo->getSaveName()]);
                 }else{

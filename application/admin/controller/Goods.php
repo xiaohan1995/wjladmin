@@ -25,14 +25,13 @@ class Goods  extends AdminBase
         $category  =  $this->getGoodsCategory();
         if($type=='update') {
            
-            $article =  model('article')->getArticle(input("param.article_id",''));
-            $article['article_content']  = htmlspecialchars_decode($article['article_content']);
-            $article['article_category'] = explode(",", $article['article_category']);
-            $this->assign("article",$article);
-            $this->assign("article_category",$article['article_category']);
+            $goods =  model('goods')->getGoods(input("param.g_id",''));
+            $goods['goods_category'] = explode(",", $goods['goods_category']);
+            $this->assign("goods",$goods);
+            $this->assign("goods_category",$article['goods_category']);
         }else{
 
-            $this->assign("article_category",[]);
+            $this->assign("goods_category",[]);
         }
         
         $this->assign("category",$category);

@@ -36,10 +36,11 @@
                     <div class="form-group">
                                 <label class="col-sm-1 control-label text-navy">商品名：</label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="role_name" value="{$roleInfo.role_name|default=''}" id="role_name" placeholder="输入角色名" class="form-control">
+                                    <input type="text" name="role_name" value="{$roleInfo.role_name|default=''}" id="role_name" placeholder="输入商品名" class="form-control">
                                 </div>
                     </div>
                     <div class="input-group col-sm-5">
+                        <label class="col-sm-1 control-label text-navy">类别：</label>
                             <select data-placeholder="选择所属分类" class="chosen-select" multiple style="width:350px;" tabindex="4">
                                 
                                         <volist name="category" id="child">
@@ -55,7 +56,7 @@
                     <div class="form-group">
                                 <label class="col-sm-1 control-label text-navy">价格：</label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="g_price" value="{$roleInfo.g_price|default=''}" id="role_name" placeholder="输入角色名" class="form-control">
+                                    <input type="text" name="g_price" value="{$roleInfo.g_price|default=''}" id="role_name" placeholder="输入商品价格" class="form-control">
                                 </div>
                     </div>
                     <div class="form-group">
@@ -68,8 +69,8 @@
                     <div class="form-group">
                         <label class="col-sm-1 control-label">商品图片：</label>
                         <div class="col-sm-2">
-                            <input type="file" id="article_poster" name="file"  value="" class="form-control input-file" onchange="getImgData(this);">
-                            <input type="hidden" id="hide_article_poster" name="hide_article_poster"  value="{$article['article_poster'] | default=''}" class="form-control input-file">
+                            <input type="file" id="goods_poster" name="file"  value="" class="form-control input-file" onchange="getImgData(this);">
+                            <input type="hidden" id="hide_goods_poster" name="hide_goods_poster"  value="{$goods['goods_poster'] | default=''}" class="form-control input-file">
                         </div>
                     </div>
                      <div class="form-group">
@@ -86,17 +87,7 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="ibox float-e-margins">
-                        <div id="summernote_box" class="ibox-content no-padding">
-                            <div class ="summernote">
-                                {$article['article_content'] | default = ''}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="row">
                 <div class="col-sm-2 col-sm-offset-5">
                     <div class="radio radio-success radio-inline">
@@ -109,7 +100,7 @@
                     </div>
                     <input type="hidden" id="article_id" name="article_id" value="{$article['article_id'] | default = ''}" />
                     <input type="hidden" id="handle_type"  name="handle_type"  value="{$type}" />
-                    <button class="btn btn-primary" type="submit" onclick="publishArticleSubmit();">保存内容</button>
+                    <button class="btn btn-primary" type="submit" onclick="publishGoodsSubmit();">保存内容</button>
                 </div>
             </div>
         </form>
@@ -217,14 +208,8 @@
         }
         
 
-        function publishArticleSubmit(){
+        function publishGoodsSubmit(){
 
-            if($.trim($("input[name='article_title']").val()) ==''){
-
-                layer.msg('请填写标题', {time:500, icon:2});
-
-                return false;
-            }
 
             if(!$(".chosen-select").val()){
 
@@ -233,12 +218,7 @@
                 return false;
             }
 
-            if($.trim($(".summernote").summernote('code')) ==''){
-
-                layer.msg('请填写内容', {time:500, icon:2});
-
-                return false;
-            }
+            
             
             var formData = new FormData(document.getElementById('article_form'));
             formData.append('article_content',$(".summernote").summernote('code'));
@@ -247,11 +227,11 @@
             var url = '';
             if($("#handle_type").val()=='add') {
 
-                url = "{:url('admin/Article/addArticle')}";
+                url = "{:url('admin/Goods/addGoods')}";
 
             }else if($("#handle_type").val()=='update'){
 
-                url = "{:url('admin/Article/updateArticle')}";
+                url = "{:url('admin/Goods/updateGoods')}";
             }
 
             $.ajax({
