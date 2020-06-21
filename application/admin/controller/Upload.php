@@ -4,7 +4,7 @@ class Upload  extends AdminBase
 {
     
     protected $fileSize = 2225678;
-    protected $fileExt  = 'jpg,png,gif';
+    protected $fileExt  = 'jpg,png,gif,jpeg';
     protected $saveFolder = ''; // 图片保存目录
 
     public function checkUploadFileInfo() {

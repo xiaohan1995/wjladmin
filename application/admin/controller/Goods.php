@@ -19,47 +19,67 @@ class Goods  extends AdminBase
         return $this->fetch();
     }
     
-    public function getUser() {
-        $userId = input('param.user_id');
+    public function publishGoods() {
+       
+        $type      = input("param.type",'');
+        $category  =  $this->getGoodsCategory();
+        if($type=='update') {
+           
+            $article =  model('article')->getArticle(input("param.article_id",''));
+            $article['article_content']  = htmlspecialchars_decode($article['article_content']);
+            $article['article_category'] = explode(",", $article['article_category']);
+            $this->assign("article",$article);
+            $this->assign("article_category",$article['article_category']);
+        }else{
 
-        $user   = model("User")->getUser($userId);
+            $this->assign("article_category",[]);
+        }
         
-        return $user;
+        $this->assign("category",$category);
+
+        $this->assign("type",$type);
+
+        return $this->fetch();
     }
+
     
-    public function getRoles(){
+    public function addArticle() {
+        $input = input();
+        $info  = model('article')->addArticle($input);
 
-        $roles  = model('Role')->getSelectRoles();
-
-        return $roles ? json(['code'=>1,'roles'=>$roles,'msg'=>'获取数据成功']) : json(['code'=>0,'roles'=>'','msg'=>'获取数据成功']);
+        return $info;
     }
-    public function addUser(){
+
+    public function delArticle() {
+       $article_id = input("param.article_id");
+
+       $info  = model('article')->delArticle($article_id);
+
+        return $info;
+
+    }
+
+    public function updateArticle() {
         
         $input = input();
+  
+        $info  = model('article')->updateArticle($input);
 
-        $info  =  model('User')->addUser($input);
-       
         return $info;
     }
-    
-    public function delUser(){
+
+
+    public function getGoodsCategory(){
+        $cat  = db('yx_goods_type')->select();
+        if(!empty($cat)){
+            return $cat;
+        }else{
+            return array();
+        }
         
-        $userId = input('param.user_id');
         
-        $info   =  model('User')->delUser($userId);
-    
-        return $info;
+
         
-    }
-    
-    public function updateUser(){
-           
-        $input  = input();
-         
-        $info   = model('User')->updateUser($input);
-        
-        return $info;
-      
     }
 
     
