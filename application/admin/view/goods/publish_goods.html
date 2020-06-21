@@ -44,7 +44,7 @@
                             <select data-placeholder="选择所属分类" class="chosen-select" multiple style="width:350px;" tabindex="4">
                                 
                                         <volist name="category" id="child">
-                                            <if condition="in_array($child['t_id'],$article_category)">
+                                            <if condition="in_array($child['t_id'],$goods_category)">
                                                 <option  value="{$child['t_id']}" hassubinfo="true" selected>{$child['t_name']}</option>
                                             <else/>
                                                 <option  value="{$child['menu_id']}" hassubinfo="true">{$child['t_name']}</option>
