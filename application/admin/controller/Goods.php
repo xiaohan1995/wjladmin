@@ -43,17 +43,17 @@ class Goods  extends AdminBase
     }
 
     
-    public function addArticle() {
+    public function addGoods() {
         $input = input();
-        $info  = model('article')->addArticle($input);
+        $info  = model('goods')->addArticle($input);
 
         return $info;
     }
 
-    public function delArticle() {
-       $article_id = input("param.article_id");
+    public function delGoods() {
+       $goods_id = input("param.g_id");
 
-       $info  = model('article')->delArticle($article_id);
+       $info  = model('goods')->delArticle($goods_id);
 
         return $info;
 
@@ -63,7 +63,7 @@ class Goods  extends AdminBase
         
         $input = input();
   
-        $info  = model('article')->updateArticle($input);
+        $info  = model('goods')->updateArticle($input);
 
         return $info;
     }
