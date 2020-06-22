@@ -28,9 +28,9 @@
             <div class="col-sm-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>商品管理</h5>
+                        <h5>商品类型管理</h5>
                         <if condition="check_auth('admin/Goods/addGoods')">
-                            <button id="toggle_modal" class="btn btn-primary btn-circle" type="button" style="margin-bottom:0px;margin-left:10px;position:relative;top:-5px;" title="添加商品">
+                            <button id="toggle_modal" class="btn btn-primary btn-circle" type="button" style="margin-bottom:0px;margin-left:10px;position:relative;top:-5px;" title="添加商品类型">
                                 <i class="fa fa-edit"></i>+
                             </button>
                         </if>
@@ -45,33 +45,33 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>商品名</th>
-                                    <th>图片</th>
-                                    <th>价格</th>
-                                    <th>描述</th>
+                                    <th>商品类型</th>
+                                    <th>状态</th>
                                     <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <volist name="goods" id="vo">
                                     <tr class="gradeX" id="role-{$vo['role_id']}">
-                                        <td class="center" align="center">{$vo['g_id']}</td>
-                                        <td class="center" align="center">{$vo['g_name']}</td>
-                                        <td class="center" align="center" ><img src="{$vo['g_img']}" height="120px"></td>
-                                        <td class="center" align="center">{$vo['g_price']}</td>
-                                        <td class="center" align="center">{$vo['g_info']}</td>
+                                        <td class="center" align="center">{$vo['t_id']}</td>
+                                        <td class="center" align="center">{$vo['t_name']}</td>
+                                        <if condition="$vo['t_status'] eq 1">
+                                            <td class="center" align="center">正常</td>
+                                        </else>
+                                            <td class="center" align="center">删除</td>
+                                        </if>
                                         <td class="center" align="center">
                                             <div class="btn-group">
                                                 
-                                                <if condition="$vo['g_id'] eq 1">
+                                                <if condition="$vo['t_id'] eq 1">
                                                     <if condition="$Request.session.user_id eq 1">
                                                         <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle" aria-expanded="false">操作 <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li>
-                                                                <a href="javascript:;" class="font-bold edit-role" data-id="{$vo['g_id']}">修改</a>
+                                                                <a href="javascript:;" class="font-bold edit-role" data-id="{$vo['t_id']}">修改</a>
                                                             </li>
-                                                            <li><a href="javascript:;" class="font-bold del-role" data-id="{$vo['g_id']}">删除</a></li>
+                                                            <li><a href="javascript:;" class="font-bold del-role" data-id="{$vo['t_id']}">删除</a></li>
                                                         </ul>
                                                     <else/>
                                                         <button data-toggle="dropdown" class="btn btn-primary btn-xs disabled" aria-expanded="false">操作 <span class="caret"></span>
@@ -99,10 +99,8 @@
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
-                                    <th>商品名</th>
-                                    <th>图片</th>
-                                    <th>价格</th>
-                                    <th>描述</th>
+                                    <th>商品类型</th>
+                                    <th>状态</th>
                                     <th>操作</th>
                                 </tr>
                             </tfoot>
@@ -124,13 +122,13 @@
             $(".dataTables-example").dataTable();
 
             $(".ibox-content").on('click','.edit-role',function(){
-                var goodsId = $(this).data("id");
+                var goodtypeId = $(this).data("id");
                 var editIndex = layer.open({
-                    title:'编辑商品',
+                    title:'编辑商品类型',
                     offset: ['120px', '220px'],
                     isOutAnim: true ,
                     type: 2,
-                    content:"{:url('admin/Goods/publishGoods')}?type=update&g_id="+goodsId,
+                    content:"{:url('admin/Goodtype/publishGoodtype')}?type=update&t_id="+goodtypeId,
                     area: ['800px','400px'],
                     maxmin: true
                 });
@@ -140,21 +138,21 @@
             
             $(".ibox-content").on('click','.del-role',function(){
                 
-                var goodsId = $(this).data("id");
+                var goodtypeId = $(this).data("id");
 
-                layer.confirm("你确定要删除【"+$("#role-"+roleId).children("td").eq(1).text()+"】吗？", {
+                layer.confirm("你确定要删除【"+$("#role-"+goodtypeId).children("td").eq(1).text()+"】吗？", {
 
                     btn: ['确定','取消'] //按钮
 
                 }, function(){
 
-                    $.post("{:url('admin/Role/delRole')}",{role_id:roleId},function(data){
+                    $.post("{:url('admin/Goodtype/delGoodtype')}",{t_id:goodtypeId},function(data){
                     
                         if(data.code==1) {
 
                             layer.msg(data.msg, {time:500, icon:1});
                              
-                            $("#role-"+roleId).remove();
+                            $("#role-"+goodtypeId).remove();
 
                         }else{
                         
@@ -170,11 +168,11 @@
             $("#toggle_modal").on('click',function(){
 
                 var addIndex = layer.open({
-                  title:'添加商品',
+                  title:'添加商品类型',
                   offset: ['120px', '220px'],
                   isOutAnim: true ,
                   type: 2,
-                  content:"{:url('admin/Goods/publishGoods')}?type=add",
+                  content:"{:url('admin/Goodtype/publishGoodtype')}?type=add",
                   area: ['800px','400px'],
                   maxmin: true
                 });
