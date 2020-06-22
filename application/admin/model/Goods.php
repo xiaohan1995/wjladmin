@@ -121,12 +121,9 @@ class Goods extends Model
                 if($_FILES['file']['name']) {
                     $goods_poster_url = $upload->uploadFile('goods');
 
-                    $input['goods_poster'] = $goods_poster_url;
-                }else{
-
-                    $input['goods_poster'] = $input['hide_goods_poster'];
+                    $input['g_img'] = $goods_poster_url;
                 }
-                
+                $input['g_type'] = $input['goods_category'];
 
                 $save = $this->allowField(true)->save($input,$input['g_id']);
                 
