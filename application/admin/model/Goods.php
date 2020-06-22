@@ -47,10 +47,9 @@ class Goods extends Model
     public function getGoods($goodsId){
 
         $goods = $this->where("g_id=".$goodsId)->find();
-        var_dump($goods);die;
         if($goods) {
             $goods = $goods->toArray();
-
+            print_r($goods);die;
             return $goods;
         }else{
             
