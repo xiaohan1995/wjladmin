@@ -36,7 +36,7 @@
                     <div class="form-group">
                                 <label class="col-sm-1 control-label text-navy">商品类型名：</label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="g_name" value="{$goods.g_name|default=''}" id="g_name" placeholder="输入商品名" class="form-control">
+                                    <input type="text" name="t_name" value="{$goodtype.t_name|default=''}" id="t_name" placeholder="输入商品类型名" class="form-control">
                                 </div>
                     </div>
                     
@@ -49,11 +49,11 @@
             <div class="row">
                 <div class="col-sm-2 col-sm-offset-5">
                     <div class="radio radio-success radio-inline">
-                        <input type="radio" id="inlineRadio1" value="1" name="t_status" <if condition="$goodtype['g_status'] eq 1">checked</if>>
+                        <input type="radio" id="inlineRadio1" value="1" name="t_status" <if condition="$goodtype['t_status'] eq 1">checked</if>>
                         <label for="inlineRadio1">正常</label>
                     </div>
                     <div class="radio radio-inline radio-danger">
-                        <input type="radio" id="inlineRadio2" value="2" name="t_status" <if condition="$goodtype['g_status'] eq 2">checked</if>>
+                        <input type="radio" id="inlineRadio2" value="2" name="t_status" <if condition="$goodtype['t_status'] eq 2">checked</if>>
                         <label for="inlineRadio2">删除</label>
                     </div>
                     <input type="hidden" id="t_id" name="t_id" value="{$goodtype['t_id'] | default = ''}" />
