@@ -18,24 +18,24 @@ class Upload  extends AdminBase
         $file = request()->file('file');
         $info = $file->validate(['size'=>$this->fileSize,'ext'=>$this->fileExt])->check();//检测上传文件信息，为了节省空间，所以并不会立即上传文件到服务器
         
-        if($info) {
+        // if($info) {
            
-            if($isupload==1){
-                return json(['code'=>1,'msg'=>'图片符合规定','data'=>'']);
-            }elseif($isupload==2){upload
+        //     if($isupload==1){
+        //         return json(['code'=>1,'msg'=>'图片符合规定','data'=>'']);
+        //     }elseif($isupload==2){upload
                 
-                $uploadInfo = $file->move(ROOT_PATH . 'public' . DS . ''. DS . $this->saveFolder);
-                if($uploadInfo) {
-                    return json(['code'=>1,'msg'=>'图片符合规定','data'=> DS .'upload'. DS . $this->saveFolder. DS .$uploadInfo->getSaveName()]);
-                }else{
+        //         $uploadInfo = $file->move(ROOT_PATH . 'public' . DS . ''. DS . $this->saveFolder);
+        //         if($uploadInfo) {
+        //             return json(['code'=>1,'msg'=>'图片符合规定','data'=> DS .'upload'. DS . $this->saveFolder. DS .$uploadInfo->getSaveName()]);
+        //         }else{
                      
-                    return json(['code'=>2,'msg'=>$uploadInfo->getError(),'data'=>'']);  
-                }
-            }
-        }else{
+        //             return json(['code'=>2,'msg'=>$uploadInfo->getError(),'data'=>'']);  
+        //         }
+        //     }
+        // }else{
            
-           return json(['code'=>2,'msg'=>$file->getError(),'data'=>'']);
-        }
+        //    return json(['code'=>2,'msg'=>$file->getError(),'data'=>'']);
+        // }
     }
 
 
