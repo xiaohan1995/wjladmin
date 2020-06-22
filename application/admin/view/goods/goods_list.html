@@ -80,12 +80,12 @@
                                                     <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle" aria-expanded="false">操作 <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <if condition="check_auth('admin/Role/updateRoleAuth')">
-                                                            <li><a href="javascript:;" class="font-bold edit-role" data-id="{$vo['role_id']}">修改</a></li>
+                                                        <if condition="check_auth('admin/Goods/updateGoods')">
+                                                            <li><a href="javascript:;" class="font-bold edit-role" data-id="{$vo['g_id']}">修改</a></li>
                                                         </if>
                                                        
-                                                        <if condition="check_auth('admin/Role/delRole')">
-                                                            <li><a href="javascript:;" class="font-bold del-role" data-id="{$vo['role_id']}">删除</a></li>
+                                                        <if condition="check_auth('admin/Goods/delGoods')">
+                                                            <li><a href="javascript:;" class="font-bold del-role" data-id="{$vo['g_id']}">删除</a></li>
                                                         </if>
                                                         
                                                     </ul>
