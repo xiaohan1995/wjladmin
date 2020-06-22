@@ -124,7 +124,7 @@
             $(".dataTables-example").dataTable();
 
             $(".ibox-content").on('click','.edit-role',function(){
-                console.log($(this).data);
+                console.log($(this).data());
                 return;
                 var goodsId = $(this).data("g_id");
                 var editIndex = layer.open({
