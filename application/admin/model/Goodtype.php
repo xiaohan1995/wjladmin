@@ -63,6 +63,7 @@ class Goodtype extends Model
         if(request()->isPost()){
 
             if($input['handle_type'] == 'add') {
+                $input['t_add_time'] = time();
                 $save = $this->allowField(true)->save($input);
                 
                 if($save) {

@@ -25,28 +25,28 @@ $menu = array(
 			   //     )
 			   //  ),
 	            
-	            array(
-					'name'=>'首页菜单',
+	    //         array(
+					// 'name'=>'首页菜单',
 
-					'action'=>'admin/System/navMenu',
+					// 'action'=>'admin/System/navMenu',
 
-			      "auth"=>array(
-			            array("name"=>'添加','action'=>"admin/System/addMenu"),
-			            array("name"=>'删除','action'=>"admin/System/delMenu"),
-			            array("name"=>'编辑','action'=>"admin/System/editMenu"),
-			       )
-			    ),
+			  //     "auth"=>array(
+			  //           array("name"=>'添加','action'=>"admin/System/addMenu"),
+			  //           array("name"=>'删除','action'=>"admin/System/delMenu"),
+			  //           array("name"=>'编辑','action'=>"admin/System/editMenu"),
+			  //      )
+			  //   ),
 
-	            array(
-					'name'=>'系统日志',
+	    //         array(
+					// 'name'=>'系统日志',
 
-					'action'=>'admin/System/systemLog',
+					// 'action'=>'admin/System/systemLog',
 
-	                "auth"=>array(
-	                	array("name"=>'添加','action'=>"admin/System/addLog"),
-	                	array("name"=>'删除','action'=>"admin/System/delLog")
-	                )
-			    ),
+	    //             "auth"=>array(
+	    //             	array("name"=>'添加','action'=>"admin/System/addLog"),
+	    //             	array("name"=>'删除','action'=>"admin/System/delLog")
+	    //             )
+			  //   ),
 
 			    array(
 					'name'=>'字体图标1',
@@ -71,34 +71,34 @@ $menu = array(
 
        
 	    array(
-			'name'=>'用户管理',
+			'name'=>'内容管理',
 	        'controller'=>'admin/User',
 	        'icon'=>'fa-user',
 			'child'=>array(
 
-				array(
-					'name'=>'管理员列表',
+				// array(
+				// 	'name'=>'管理员列表',
 
-					'action'=>'admin/User/userList',
+				// 	'action'=>'admin/User/userList',
 
-	                "auth"=>array(
-	                	array("name"=>'添加','action'=>"admin/User/addUser"),
-	                	array("name"=>'删除','action'=>"admin/User/delUser"),
-	                	array("name"=>'修改','action'=>"admin/User/updateUser"),
-	                )
-			    ),
+	   //              "auth"=>array(
+	   //              	array("name"=>'添加','action'=>"admin/User/addUser"),
+	   //              	array("name"=>'删除','action'=>"admin/User/delUser"),
+	   //              	array("name"=>'修改','action'=>"admin/User/updateUser"),
+	   //              )
+			 //    ),
 	            
-	            array(
-					'name'=>'角色管理',
+	    //         array(
+					// 'name'=>'角色管理',
 
-					'action'=>'admin/Role/roleList',
+					// 'action'=>'admin/Role/roleList',
 
-	                "auth"=>array(
-	                    array("name"=>'添加','action'=>"admin/Role/addRoleAuth"),
-	                	array("name"=>'删除','action'=>"admin/Role/delRole"),
-	                	array("name"=>'修改','action'=>"admin/Role/updateRoleAuth"),
-	                )
-			    ),
+	    //             "auth"=>array(
+	    //                 array("name"=>'添加','action'=>"admin/Role/addRoleAuth"),
+	    //             	array("name"=>'删除','action'=>"admin/Role/delRole"),
+	    //             	array("name"=>'修改','action'=>"admin/Role/updateRoleAuth"),
+	    //             )
+			  //   ),
 			    array(
 					'name'=>'商品管理',
 
@@ -127,49 +127,49 @@ $menu = array(
 		),
 
 
-		array(
-			'name'=>'文章管理',
-	        'controller'=>'admin/Order',
-	        'icon'=>'fa-edit',
-			'child'=>array(
+		// array(
+		// 	'name'=>'文章管理',
+	 //        'controller'=>'admin/Order',
+	 //        'icon'=>'fa-edit',
+		// 	'child'=>array(
 
-				array(
-					'name'=>'文章列表',
+		// 		array(
+		// 			'name'=>'文章列表',
 
-					'action'=>'admin/Article/articleList',
+		// 			'action'=>'admin/Article/articleList',
 
-	                "auth"=>array(
-	                	array("name"=>'添加','action'=>"admin/Article/addArticle"),
-	                	array("name"=>'删除','action'=>"admin/Article/delArticle"),
-	                	array("name"=>'修改','action'=>"admin/Article/updateArticle"),
-	                )
-			    ),
+	 //                "auth"=>array(
+	 //                	array("name"=>'添加','action'=>"admin/Article/addArticle"),
+	 //                	array("name"=>'删除','action'=>"admin/Article/delArticle"),
+	 //                	array("name"=>'修改','action'=>"admin/Article/updateArticle"),
+	 //                )
+		// 	    ),
 	            
-		    )
+		//     )
 		    
-		),
+		// ),
 
-		array(
-			'name'=>'用户管理',
-	        'controller'=>'admin/Order',
-	        'icon'=>'fa-edit',
-			'child'=>array(
+		// array(
+		// 	'name'=>'用户管理',
+	 //        'controller'=>'admin/Order',
+	 //        'icon'=>'fa-edit',
+		// 	'child'=>array(
 
-				array(
-					'name'=>'文章列表',
+		// 		array(
+		// 			'name'=>'文章列表',
 
-					'action'=>'admin/Article/articleList',
+		// 			'action'=>'admin/Article/articleList',
 
-	                "auth"=>array(
-	                	array("name"=>'添加','action'=>"admin/Article/addArticle"),
-	                	array("name"=>'删除','action'=>"admin/Article/delArticle"),
-	                	array("name"=>'修改','action'=>"admin/Article/updateArticle"),
-	                )
-			    ),
+	 //                "auth"=>array(
+	 //                	array("name"=>'添加','action'=>"admin/Article/addArticle"),
+	 //                	array("name"=>'删除','action'=>"admin/Article/delArticle"),
+	 //                	array("name"=>'修改','action'=>"admin/Article/updateArticle"),
+	 //                )
+		// 	    ),
 	            
-		    )
+		//     )
 		    
-		),
+		// ),
         
 	),
 	
