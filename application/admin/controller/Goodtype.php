@@ -19,7 +19,7 @@ class Goodtype  extends AdminBase
         return $this->fetch();
     }
     
-    public function publishGoods() {
+    public function publishGoodtype() {
        
         $type      = input("param.type",'');
         //$category  =  $this->getGoodsCategory();
