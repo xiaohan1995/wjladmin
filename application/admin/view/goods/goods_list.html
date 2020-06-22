@@ -123,13 +123,13 @@
             $(".dataTables-example").dataTable();
 
             $(".ibox-content").on('click','.edit-role',function(){
-                var roleId = $(this).data("id");
+                var goodsId = $(this).data("g_id");
                 var editIndex = layer.open({
-                    title:'编辑角色',
+                    title:'编辑商品',
                     offset: ['120px', '220px'],
                     isOutAnim: true ,
                     type: 2,
-                    content:"{:url('admin/Goods/dogoods')}?type=update&role_id="+roleId,
+                    content:"{:url('admin/Goods/publishGoods')}?type=update&g_id="+goodsId,
                     area: ['800px','400px'],
                     maxmin: true
                 });
