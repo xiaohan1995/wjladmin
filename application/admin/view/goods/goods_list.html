@@ -124,9 +124,7 @@
             $(".dataTables-example").dataTable();
 
             $(".ibox-content").on('click','.edit-role',function(){
-                console.log($(this).data());
-                return;
-                var goodsId = $(this).data("g_id");
+                var goodsId = $(this).data("id");
                 var editIndex = layer.open({
                     title:'编辑商品',
                     offset: ['120px', '220px'],
@@ -142,7 +140,7 @@
             
             $(".ibox-content").on('click','.del-role',function(){
                 
-                var roleId = $(this).data("id");
+                var goodsId = $(this).data("id");
 
                 layer.confirm("你确定要删除【"+$("#role-"+roleId).children("td").eq(1).text()+"】吗？", {
 
