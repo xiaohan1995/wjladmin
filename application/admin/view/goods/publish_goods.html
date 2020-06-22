@@ -82,12 +82,12 @@
             <div class="row">
                 <div class="col-sm-2 col-sm-offset-5">
                     <div class="radio radio-success radio-inline">
-                        <input type="radio" id="inlineRadio1" value="0" name="g_status" <if condition="$goods['g_status'] eq 0">checked</if>>
-                        <label for="inlineRadio1">发表</label>
+                        <input type="radio" id="inlineRadio1" value="0" name="g_status" <if condition="$goods['g_status'] eq 1">checked</if>>
+                        <label for="inlineRadio1">上架</label>
                     </div>
                     <div class="radio radio-inline radio-danger">
                         <input type="radio" id="inlineRadio2" value="2" name="g_status" <if condition="$goods['g_status'] eq 2">checked</if>>
-                        <label for="inlineRadio2">草稿</label>
+                        <label for="inlineRadio2">下架</label>
                     </div>
                     <input type="hidden" id="g_id" name="g_id" value="{$goods['g_id'] | default = ''}" />
                     <input type="hidden" id="handle_type"  name="handle_type"  value="{$type}" />

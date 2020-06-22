@@ -24,8 +24,9 @@ class Goods  extends AdminBase
         $type      = input("param.type",'');
         $category  =  $this->getGoodsCategory();
         if($type=='update') {
-           
+            
             $goods =  model('goods')->getGoods(input("param.g_id",''));
+            print_r($goods);
             $goods['goods_category'] = explode(",", $goods['g_type']);
             $this->assign("goods",$goods);
             $this->assign("goods_category",$goods['goods_category']);
