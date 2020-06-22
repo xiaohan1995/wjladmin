@@ -36,7 +36,7 @@
                     <div class="form-group">
                                 <label class="col-sm-1 control-label text-navy">商品名：</label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="role_name" value="{$roleInfo.role_name|default=''}" id="role_name" placeholder="输入商品名" class="form-control">
+                                    <input type="text" name="g_name" value="{$goodsInfo.g_name|default=''}" id="g_name" placeholder="输入商品名" class="form-control">
                                 </div>
                     </div>
                     <div class="input-group col-sm-5">
@@ -47,7 +47,7 @@
                                             <if condition="in_array($child['t_id'],$goods_category)">
                                                 <option  value="{$child['t_id']}" hassubinfo="true" selected>{$child['t_name']}</option>
                                             <else/>
-                                                <option  value="{$child['menu_id']}" hassubinfo="true">{$child['t_name']}</option>
+                                                <option  value="{$child['t_id']}" hassubinfo="true">{$child['t_name']}</option>
                                             </if>
                                         </volist>
                                     
@@ -73,16 +73,7 @@
                             <input type="hidden" id="hide_goods_poster" name="hide_goods_poster"  value="{$goods['goods_poster'] | default=''}" class="form-control input-file">
                         </div>
                     </div>
-                     <div class="form-group">
-                            <label class="col-sm-1 control-label">预览图片</label>
-                            <div class="" id="temp_picture_wrap" style="position:relative;">
-                                <if condition="$goods['goods_poster']">
-                                   <img src="{$goods['goods_poster']}" id="temp_picture" width="240" height="250" style="margin-top:15px;" /> 
-
-                                    <a class='del_temp_picture' style='position:absolute;bottom:0px;margin-left:10px;'>删除</a>
-                                </if>
-                            </div>
-                        </div>
+                     
                     <div class="hr-line-dashed" style="border:0.5px dashed #bfbaba;"></div>
                 </div>
             </div>
@@ -221,9 +212,9 @@
             
             
             var formData = new FormData(document.getElementById('goods_form'));
-            formData.append('goods_content',$(".summernote").summernote('code'));
+            //formData.append('goods_content',$(".summernote").summernote('code'));
             formData.append('goods_category',$(".chosen-select").val().join(','));
-            
+            console.log(formData);return;
             var url = '';
             if($("#handle_type").val()=='add') {
 
