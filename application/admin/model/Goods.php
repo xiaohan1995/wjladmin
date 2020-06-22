@@ -13,7 +13,7 @@ class Goods extends Model
     protected $createTime = 'article_add_time';
     
 
-    public  function getGoods($num=20){
+    public  function getGoodss($num=20){
        
         $keywords = input('param.keywords','');
         $where    = "";
