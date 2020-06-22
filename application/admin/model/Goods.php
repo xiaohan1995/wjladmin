@@ -124,7 +124,7 @@ class Goods extends Model
                     $input['g_img'] = $goods_poster_url;
                 }
                 $input['g_type'] = $input['goods_category'];
-
+                print_r($input);die;
                 $save = $this->allowField(true)->save($input,$input['g_id']);
                 
                 if($save) {

@@ -62,7 +62,6 @@ class Goods  extends AdminBase
     public function updateGoods() {
         
         $input = input();
-        print_r($input);die;
         $info  = model('goods')->updateGoods($input);
 
         return $info;
