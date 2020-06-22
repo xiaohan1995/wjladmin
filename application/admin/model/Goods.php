@@ -123,6 +123,7 @@ class Goods extends Model
 
                     $input['g_img'] = $goods_poster_url;
                 }
+                $input['g_type'] = $input['goods_category'];
                 $save = $this->allowField(true)->save($input,$input['g_id']);
                 if($save) {
                     return json(['code'=>1,'msg'=>'保存成功']);
