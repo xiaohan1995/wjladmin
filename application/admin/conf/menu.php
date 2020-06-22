@@ -110,6 +110,17 @@ $menu = array(
 	                	array("name"=>'修改','action'=>"admin/Role/updateRoleAuth"),
 	                )
 			    ),
+			    array(
+					'name'=>'商品类型管理',
+
+					'action'=>'admin/Goodtype/goodtypeList',
+
+	                "auth"=>array(
+	                    array("name"=>'添加','action'=>"admin/Goodtype/addGoodtype"),
+	                	array("name"=>'删除','action'=>"admin/Role/delGoodtype"),
+	                	array("name"=>'修改','action'=>"admin/Role/updateGoodtype"),
+	                )
+			    ),
 			    
 		    )
 		    
