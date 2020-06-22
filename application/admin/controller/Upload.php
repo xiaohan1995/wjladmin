@@ -12,6 +12,7 @@ class Upload  extends AdminBase
         if(input('param.folder','')) {
             $this->saveFolder =  input('param.folder');
         }
+        print_r($input);die;
         
         // 获取表单上传文件 例如上传了001.jpg
         $file = request()->file('file');
