@@ -9,7 +9,7 @@ class Upload  extends AdminBase
 
     public function checkUploadFileInfo() {
         $isupload = input('param.isupload'); // 1：不上传， 2：上传
-        
+        print_r($isupload);die;
         if(input('param.folder','')) {
             $this->saveFolder =  input('param.folder');
         }
