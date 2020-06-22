@@ -36,7 +36,7 @@
                     <div class="form-group">
                                 <label class="col-sm-1 control-label text-navy">商品名：</label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="g_name" value="{$goodsInfo.g_name|default=''}" id="g_name" placeholder="输入商品名" class="form-control">
+                                    <input type="text" name="g_name" value="{$goods.g_name|default=''}" id="g_name" placeholder="输入商品名" class="form-control">
                                 </div>
                     </div>
                     <div class="input-group col-sm-5">
@@ -56,13 +56,13 @@
                     <div class="form-group">
                                 <label class="col-sm-1 control-label text-navy">价格：</label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="g_price" value="{$roleInfo.g_price|default=''}" id="role_name" placeholder="输入商品价格" class="form-control">
+                                    <input type="text" name="g_price" value="{$goods.g_price|default=''}" id="role_name" placeholder="输入商品价格" class="form-control">
                                 </div>
                     </div>
                     <div class="form-group">
                                 <label class="col-sm-1 control-label text-navy">简介：</label>
                                 <div class="col-sm-5">
-                                    <input type="text" name="g_info" value="{$roleInfo.g_info|default=''}" id="g_info" placeholder="输入简介" class="form-control">
+                                    <input type="text" name="g_info" value="{$goods.g_info|default=''}" id="g_info" placeholder="输入简介" class="form-control">
                                 </div>
                     </div>
 
@@ -70,7 +70,7 @@
                         <label class="col-sm-1 control-label">商品图片：</label>
                         <div class="col-sm-2">
                             <input type="file" id="goods_poster" name="file"  value="" class="form-control input-file" onchange="getImgData(this);">
-                            <input type="hidden" id="hide_goods_poster" name="hide_goods_poster"  value="{$goods['goods_poster'] | default=''}" class="form-control input-file">
+                            <input type="hidden" id="hide_goods_poster" name="hide_goods_poster"  value="{$goods['g_img'] | default=''}" class="form-control input-file">
                         </div>
                     </div>
                      
