@@ -43,7 +43,7 @@ class Goods  extends AdminBase
 
     
     public function addGoods() {
-        $input = $_POST();
+        $input = input();
         print_r($input);die;
         $info  = model('goods')->addGoods($input);
 
