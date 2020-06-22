@@ -11,7 +11,7 @@ class Goodtype  extends AdminBase
     {
     	
         
-        $goodtype =  Db::table('yx_goods_type')->select();
+        $goodtype =  Db::table('yx_goodtype')->select();
 
 
         $this->assign("goodtype",$goodtype);
