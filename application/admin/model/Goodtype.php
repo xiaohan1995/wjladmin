@@ -2,7 +2,7 @@
 namespace app\admin\model;
 use think\Model;
 use app\admin\controller\Upload;
-class Goodstype extends Model
+class Goodtype extends Model
 {
     
     protected $pk = 't_id';
