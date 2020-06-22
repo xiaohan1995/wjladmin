@@ -49,7 +49,6 @@ class Goods extends Model
         $goods = $this->where("g_id=".$goodsId)->find();
         if($goods) {
             $goods = $goods->toArray();
-            print_r($goods);die;
             return $goods;
         }else{
             
