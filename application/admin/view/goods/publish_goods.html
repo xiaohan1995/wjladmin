@@ -70,7 +70,7 @@
                         <label class="col-sm-1 control-label">商品图片：</label>
                         <div class="col-sm-2">
                             <input type="file" id="goods_poster" name="file"  value="" class="form-control input-file" onchange="getImgData(this);">
-                            <input type="hidden" id="hide_goods_poster" name="hide_goods_poster"  value="{$goods['g_img'] | default=''}" class="form-control input-file">
+                            <input type="hidden" id="g_img" name="g_img"  value="{$goods['g_img'] | default=''}" class="form-control input-file">
                         </div>
                     </div>
                      
