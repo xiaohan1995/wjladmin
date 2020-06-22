@@ -73,7 +73,8 @@ class Goods extends Model
 
                     $input['g_img'] = $goods_poster_url;
                 }
-                
+                $input['g_type'] = $input['t_id'];
+                $input['g_status'] = '1';
 
                 $save = $this->allowField(true)->save($input);
                 
