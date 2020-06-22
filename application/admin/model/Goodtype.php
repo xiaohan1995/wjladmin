@@ -2,7 +2,7 @@
 namespace app\admin\model;
 use think\Model;
 use app\admin\controller\Upload;
-class Goodtype extends Model
+class Goods_type extends Model
 {
     
     protected $pk = 't_id';
@@ -13,7 +13,7 @@ class Goodtype extends Model
     protected $createTime = 'article_add_time';
     
 
-    public  function getGoodtypes($num=20){
+    public  function getGoodstypes($num=20){
        
         $keywords = input('param.keywords','');
         $where    = "";
@@ -44,7 +44,7 @@ class Goodtype extends Model
     } 
     
     
-    public function getGoodtype($goodtypeId){
+    public function getGoodstype($goodtypeId){
 
         $goodtype = $this->where("t_id=".$goodsId)->find();
         if($goodtype) {
@@ -58,7 +58,7 @@ class Goodtype extends Model
        
     }
 
-    public function addGoodtype($input){
+    public function addGoodstype($input){
         
         if(request()->isPost()){
 
@@ -85,7 +85,7 @@ class Goodtype extends Model
     } 
 
 
-    public function delGoodtype($goodsId){
+    public function delGoodstype($goodsId){
         
         $del = $this->where('t_id='.$goodsId)->setField('t_status',2); //删除状态改为2
 
