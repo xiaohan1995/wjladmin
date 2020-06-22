@@ -4,7 +4,7 @@ class Upload  extends AdminBase
 {
     
     protected $fileSize = 2225678;
-    protected $fileExt  = 'jpg,png,gif';
+    protected $fileExt  = 'jpg,png,gif,jpeg';
     protected $saveFolder = ''; // 图片保存目录
 
     public function checkUploadFileInfo() {
@@ -12,7 +12,6 @@ class Upload  extends AdminBase
         if(input('param.folder','')) {
             $this->saveFolder =  input('param.folder');
         }
-        print_r($input);die;
         
         // 获取表单上传文件 例如上传了001.jpg
         $file = request()->file('file');
