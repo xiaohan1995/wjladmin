@@ -24,8 +24,8 @@ class Goodtype  extends AdminBase
         $type      = input("param.type",'');
         //$category  =  $this->getGoodsCategory();
         if($type=='update') {
-            
             $goodtype =  model('goodtype')->getGoodtype(input("param.t_id",''));
+            
             //print_r($goods);
             //$goods['goods_category'] = explode(",", $goods['g_type']);
             $this->assign("goodtype",$goodtype);

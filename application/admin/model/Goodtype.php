@@ -47,7 +47,6 @@ class Goodtype extends Model
     public function getGoodtype($t_id){
 
         $goodtype = $this->where("t_id=".$t_id)->find();
-        print_r($goodtype);die;
         if($goodtype) {
             $goodtype = $goodtype->toArray();
             return $goodtype;
