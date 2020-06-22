@@ -45,6 +45,7 @@ class Goods extends Model
     
     
     public function getGoods($goodsId){
+        print_r($goodsId);die;
 
         $goods = $this->where("g_id=".$goodsId)->find();
 
