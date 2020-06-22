@@ -69,7 +69,7 @@ class Goods  extends AdminBase
 
 
     public function getGoodsCategory(){
-        $cat  = db('goods_type')->select();
+        $cat  = db('goodtype')->select();
         if(!empty($cat)){
             return $cat;
         }else{
