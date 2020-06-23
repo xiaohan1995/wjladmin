@@ -73,7 +73,7 @@ class Goods extends Model
                 $input['g_type'] = $input['goods_category'];
                 $input['g_status'] = '1';
                 $input['g_add_time'] = time();
-
+                $input['g_img'] = 'http://www.wjladmin.xiaohan1995.cn'.$input['g_img'];
                 $save = $this->allowField(true)->save($input);
                 
                 if($save) {
