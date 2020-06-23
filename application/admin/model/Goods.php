@@ -60,7 +60,6 @@ class Goods extends Model
 
     public function addGoods($input){
         
-        if(request()->isPost()){
 
             if($input['handle_type'] == 'add') {
 
@@ -73,6 +72,7 @@ class Goods extends Model
                 }
                 $input['g_type'] = $input['goods_category'];
                 $input['g_status'] = '1';
+                $input['g_add_time'] = time();
 
                 $save = $this->allowField(true)->save($input);
                 
@@ -89,10 +89,7 @@ class Goods extends Model
                return json(['code'=>4,'msg'=>'非法数据']); 
             }
 
-        }else{
-            
-               return json(['code'=>5,'msg'=>'非法请求']);
-        }
+        
     } 
 
 
@@ -124,6 +121,7 @@ class Goods extends Model
                     $input['g_img'] = $goods_poster_url;
                 }
                 $input['g_type'] = $input['goods_category'];
+                $input['g_img'] = 'http://www.wjladmin.xiaohan1995.cn'.$input['g_img'];
                 $save = $this->allowField(true)->save($input,$input['g_id']);
                 if($save) {
                     return json(['code'=>1,'msg'=>'保存成功']);
