@@ -45,7 +45,7 @@ class Goods  extends AdminBase
     
     public function addGoods() {
         $input = input();
-        var_dump($input);die;
+        var_dump($FILES);die;
         $info  = model('goods')->addGoods($input);
 
         return $info;
